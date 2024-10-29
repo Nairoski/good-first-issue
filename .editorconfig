@@ -1,5 +1,6 @@
 root = true
 
+# Define indentation style for the entire project
 [*]
 indent_style = space
 indent_size = 2
@@ -8,21 +9,25 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-# The JSON files contain newlines inconsistently
+# JSON files should follow a consistent newline style, and new files should add a newline at the end.
 [*.json]
-insert_final_newline = ignore
+insert_final_newline = true
 
-# Minified JavaScript files shouldn't be changed
-[**.min.js]
+# Minified JavaScript files should not be modified for style or final newline.
+[*.min.js]
 indent_style = ignore
-insert_final_newline = ignore
+insert_final_newline = false
 
+# Makefile files require tab indentation.
 [Makefile]
 indent_style = tab
 
+# Python files use 4 spaces for indentation to comply with PEP 8.
 [*.py]
 indent_style = space
 indent_size = 4
 
+# Markdown files should preserve trailing whitespace.
 [*.md]
 trim_trailing_whitespace = false
+
